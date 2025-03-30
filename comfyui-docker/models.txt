@@ -1,0 +1,7 @@
+checkpoints https://huggingface.co/sf3q5ws/duc/resolve/main/juggernautXL_juggXIByRundiffusion.safetensors
+checkpoints https://huggingface.co/Kijai/sam2-safetensors/resolve/main/sam2_hiera_base_plus.safetensors
+checkpoints https://huggingface.co/Kijai/Hunyuan3D-2_safetensors/resolve/main/hunyuan3d-dit-v2-0-fp16.safetensors
+checkpoints https://huggingface.co/ByteDance/Hyper-SD/resolve/main/Hyper-FLUX.1-dev-8steps-lora.safetensors
+checkpoints/flux https://huggingface.co/lllyasviel/flux1_dev/resolve/main/flux1-dev-fp8.safetensors
+controlnet/controlnet-union-sdxl-1.0 https://huggingface.co/xinsir/controlnet-union-sdxl-1.0/resolve/main/diffusion_pytorch_model_promax.safetensors
+controlnet/FLUX.1/InstantX-FLUX1-Dev-Union https://huggingface.co/InstantX/FLUX.1-dev-Controlnet-Union/resolve/main/diffusion_pytorch_model.safetensors
