@@ -17,4 +17,4 @@ jobs:
       uses: docker/setup-buildx-action@v2
 
     - name: Build Docker image
-      run: docker build -t comfyui-custom comfyui-docker
+      run: docker build -f comfyui-docker/Dockerfile -t comfyui-custom comfyui-docker
