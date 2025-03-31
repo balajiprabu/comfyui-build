@@ -33,5 +33,12 @@ RUN git clone https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet.git /ap
 RUN git clone https://github.com/un-seen/comfyui-tensorops.git /app/custom_nodes/ComfyUI-tensorop
 RUN git clone https://github.com/kijai/ComfyUI-segment-anything-2.git /app/custom_nodes/ComfyUI-segment-anything-2
 
+# Log in to Docker Hub
+RUN echo "${DOCKERHUB_TOKEN}" | docker login -u "${DOCKERHUB_USERNAME}" --password-stdin
+
+# Tag and push to Docker Hub
+RUN docker tag comfyui-custom docker.io/${DOCKERHUB_USERNAME}/comfyui-custom:latest
+RUN docker push docker.io/${DOCKERHUB_USERNAME}/comfyui-custom:latest
+
 EXPOSE 8188
 CMD ["python", "main.py", "--listen"]
