@@ -14,14 +14,11 @@ RUN pip install -r requirements.txt
 
 # Custom Nodes
 RUN echo "🔧 Cloning custom nodes..."
-RUN git clone https://github.com/kijai/ComfyUI-Hunyuan3DWrapper /app/custom_nodes/ComfyUI-Hunyuan3DWrapper && \
-    pip install -r /app/custom_nodes/ComfyUI-Hunyuan3DWrapper/requirements.txt && \
-    pip install -e /app/custom_nodes/ComfyUI-Hunyuan3DWrapper && \
-    cd /app/custom_nodes/ComfyUI-Hunyuan3DWrapper/hy3dgen/texgen/custom_rasterizer && \
-    python3 setup.py install && \
-    cd ../../differentiable_renderer && \
-    python3 setup.py install && \
-    cd /app
+RUN git clone https://github.com/kijai/ComfyUI-Hunyuan3DWrapper /app/custom_nodes/ComfyUI-Hunyuan3DWrapper
+RUN pip install -r /app/custom_nodes/ComfyUI-Hunyuan3DWrapper/requirements.txt
+RUN pip install -e /app/custom_nodes/ComfyUI-Hunyuan3DWrapper
+RUN cd /app/custom_nodes/ComfyUI-Hunyuan3DWrapper/hy3dgen/texgen/custom_rasterizer && python3 setup.py install
+RUN cd /app/custom_nodes/ComfyUI-Hunyuan3DWrapper/hy3dgen/texgen/differentiable_renderer && python3 setup.py install
 
 RUN git clone https://github.com/ltdrdata/ComfyUI-Manager /app/custom_nodes/ComfyUI-Manager
 RUN git clone https://github.com/ssitu/ComfyUI-UseEverywhere-nodes /app/custom_nodes/ComfyUI-UseEverywhere-nodes
