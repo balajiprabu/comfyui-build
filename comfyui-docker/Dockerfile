@@ -1,9 +1,10 @@
-FROM pytorch/pytorch:2.0.1-cuda11.7-cudnn8-runtime
+FROM pytorch/pytorch:2.0.1-cuda11.7-cudnn8-devel
 
 # System deps
-RUN apt-get update && apt-get install -y git wget && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y git wget build-essential ninja-build && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
+ENV CUDA_HOME=/usr/local/cuda-11.7
 
 # Clone ComfyUI
 RUN git clone https://github.com/comfyanonymous/ComfyUI.git .
@@ -18,12 +19,6 @@ RUN git clone https://github.com/kijai/ComfyUI-Hunyuan3DWrapper /app/custom_node
 
 WORKDIR /app/custom_nodes/ComfyUI-Hunyuan3DWrapper
 RUN pip install -r requirements.txt
-
-WORKDIR /app/custom_nodes/ComfyUI-Hunyuan3DWrapper/hy3dgen/texgen/custom_rasterizer
-RUN python3 setup.py install
-
-WORKDIR /app/custom_nodes/ComfyUI-Hunyuan3DWrapper/hy3dgen/texgen/differentiable_renderer
-RUN python3 setup.py install
 
 WORKDIR /app
 
