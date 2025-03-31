@@ -1,4 +1,4 @@
-FROM pytorch/pytorch:2.0.1-cuda11.8-cudnn8-runtime
+FROM pytorch/pytorch:2.0.1-cuda11.8-cudnn8-runtime-py3.10
 
 # System deps
 RUN apt-get update && apt-get install -y git wget && rm -rf /var/lib/apt/lists/*
