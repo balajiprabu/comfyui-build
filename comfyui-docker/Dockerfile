@@ -23,7 +23,7 @@ RUN pip install -r requirements.txt
 WORKDIR /app
 
 RUN git clone https://github.com/ltdrdata/ComfyUI-Manager /app/custom_nodes/ComfyUI-Manager
-RUN git clone https://github.com/ssitu/ComfyUI-UseEverywhere-nodes /app/custom_nodes/ComfyUI-UseEverywhere-nodes
+RUN git clone https://github.com/chrisgoringe/cg-use-everywhere /app/custom_nodes/ComfyUI-UseEverywhere-nodes
 RUN git clone https://github.com/TMElyralab/comfyui-save-image-with-meta /app/custom_nodes/comfyui-save-image-with-meta
 RUN git clone https://github.com/ltdrdata/ComfyUI_IPAdapter_plus /app/custom_nodes/ComfyUI_IPAdapter_plus
 RUN git clone https://github.com/WASasquatch/ComfyUI-Custom-Scripts /app/custom_nodes/ComfyUI-Custom-Scripts
