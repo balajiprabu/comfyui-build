@@ -18,7 +18,6 @@ RUN git clone https://github.com/kijai/ComfyUI-Hunyuan3DWrapper /app/custom_node
 
 WORKDIR /app/custom_nodes/ComfyUI-Hunyuan3DWrapper
 RUN pip install -r requirements.txt
-RUN pip install -e .
 
 WORKDIR /app/custom_nodes/ComfyUI-Hunyuan3DWrapper/hy3dgen/texgen/custom_rasterizer
 RUN python3 setup.py install
